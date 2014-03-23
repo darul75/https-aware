@@ -34,13 +34,13 @@ var aware = require('https-aware');
 var http = require('http');
 // your stuff...
 
-// express style
+// node style
 var server = http.createServer(function(req, res) {            
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('request was made with https header or not :' + req.isHttps());
 }).listen(8081); 
 
-// express style
+// node style 2
 var server2 = http.createServer(function(req, res) {            
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('request was made with https header or not :' + aware.isHttps(req));
