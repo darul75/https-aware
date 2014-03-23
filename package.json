@@ -1,7 +1,7 @@
 {
   "name": "https-aware",
   "description": "Be aware wether initial request was HTTPS or HTTP",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
