@@ -41,9 +41,9 @@ var server = http.createServer(function(req, res) {
 }).listen(8081); 
 
 // express style
-var server = http.createServer(function(req, res) {            
+var server2 = http.createServer(function(req, res) {            
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('request was made with https header or not :' + req.isHttps());
+    res.end('request was made with https header or not :' + aware.isHttps(req));
 }).listen(8081);
 ```
 
