@@ -1,10 +1,22 @@
 Https-aware [![NPM version](https://badge.fury.io/js/https-aware.png)](http://badge.fury.io/js/https-aware) [![Build Status](https://travis-ci.org/darul75/https-aware.svg?branch=master)](https://travis-ci.org/darul75/https-aware) [![Total views](https://sourcegraph.com/api/repos/github.com/darul75/https-aware/counters/views.png)](https://sourcegraph.com/github.com/darul75/https-aware)
 =====================
 
-Be aware wether initial request was HTTPS or HTTP
+Be aware wether initial request was HTTPS or HTTP.
 
-* Nobody will capture your pictures again
-* But your browser will be crazy
+Why
+------------
+
+Behing Proxy, Load balancer or other tricky network infrastructure request protocol is often balanced between HTTPS/HTTP.
+
+This module make a header check for following headers
+
+* Front-End-Https
+* X-Forwarded-Proto
+
+In my case, a load balancer was setting 'front-end-https' to 'on'.
+
+Default node HTTP 'request' object prototype is enhanced to get a new method : isHttps()
+Also, you may use isHttps(req) instead.
 
 Installation
 ------------
@@ -19,20 +31,19 @@ Usage
 -------------
 
 ```javascript
-var aware = require('https-aware');
+var aware = require('aware');
 
-// default example with node HTTP ( quite similar for ExpressJS )
+// express style
 var server = http.createServer(function(req, res) {            
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('request was made with https header or not :' + req.isHttps());
 }).listen(8081); 
 
-
-// another example method call if needed
+// express style
 var server = http.createServer(function(req, res) {            
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('request was made with https header or not :' + aware.isHttps(req));
-}).listen(8081); 
+    res.end('request was made with https header or not :' + req.isHttps());
+}).listen(8081);
 ```
 
 Then everything it fine. Under Mavericks OS
