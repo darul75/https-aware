@@ -19,11 +19,19 @@ Usage
 -------------
 
 ```javascript
-var aware = require('aware');
+var aware = require('https-aware');
 
+// default example with node HTTP ( quite similar for ExpressJS )
 var server = http.createServer(function(req, res) {            
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('request was made with https header or not :' + req.isHttps());
+}).listen(8081); 
+
+
+// another example method call if needed
+var server = http.createServer(function(req, res) {            
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('request was made with https header or not :' + aware.isHttps(req));
 }).listen(8081); 
 ```
 
