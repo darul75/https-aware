@@ -2,14 +2,13 @@ describe('test https aware',function() {
     var http = require('http');
     var aware = require('../src/aware');  
 
-
     // CREATE SERVER
     before(function(done){    
 
-        var server = http.createServer(function(req, res) {            
+        var server = http.createServer(function(req, res) {                        
             res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end('request was made with https header or not :' + req.isHttps());
-        }).listen(8081);    
+            res.end('request was made with https header or not :' + req.isHttps());            
+        }).listen(8081);
 
         server.on('listening', function() {   
             console.log('ok listening');     

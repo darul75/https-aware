@@ -13,4 +13,4 @@ function HttpsAware(req) {
   return self.headers[HEADER_1] === 'https' || self.headers[HEADER_2] === 'on';
 }
 
-module.aware = HttpsAware;
+exports.isHttps = HttpsAware;
