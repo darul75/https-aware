@@ -1,6 +1,6 @@
 describe('test https aware',function() {
     var http = require('http');
-    var httpsaware = require('../src/aware');  
+    var aware = require('../src/aware');  
 
 
     // CREATE SERVER

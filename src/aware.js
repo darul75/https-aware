@@ -6,6 +6,11 @@ var HEADER_2 = 'front-end-https';
 
 http.IncomingMessage.prototype.isHttps = HttpsAware;
 
-function HttpsAware() {
-  return this.headers[HEADER_1] === 'https' || this.headers[HEADER_2] === 'on';
+function HttpsAware(req) {
+  var self = this;
+  if (req)
+    self = req;
+  return self.headers[HEADER_1] === 'https' || self.headers[HEADER_2] === 'on';
 }
+
+module.aware = HttpsAware;

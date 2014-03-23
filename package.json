@@ -16,7 +16,7 @@
     "https",
     "load-balancer",
     "reverse proxy",
-    "proxy",    
+    "proxy"
   ],
   "main": "./lib/aware",
   "scripts": {
