@@ -47,8 +47,6 @@ var server = http.createServer(function(req, res) {
 }).listen(8081);
 ```
 
-Then everything it fine. Under Mavericks OS
-
 ### Build
 
 You can run the tests by running
