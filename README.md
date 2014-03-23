@@ -31,7 +31,9 @@ Usage
 -------------
 
 ```javascript
-var aware = require('aware');
+var aware = require('https-aware');
+var http = require('http');
+// your stuff...
 
 // express style
 var server = http.createServer(function(req, res) {            
