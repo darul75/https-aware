@@ -15,8 +15,7 @@ This module make a header check for following headers
 
 In my case, a load balancer was setting 'front-end-https' to 'on'.
 
-Default node HTTP 'request' object prototype is enhanced to get a new method : isHttps()
-Also, you may use isHttps(req) instead.
+Default node HTTP 'request' object prototype is enhanced to get a new method : isHttps() but, you may use isHttps(req) instead.
 
 Installation
 ------------
