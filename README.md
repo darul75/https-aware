@@ -65,6 +65,10 @@ assuming you already have `grunt` installed, otherwise you also need to do:
 npm install -g grunt-cli
 ```
 
+## Metrics
+
+[![NPM](https://nodei.co/npm/https-aware.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/https-aware/)
+
 ## License
 
 The MIT License (MIT)
